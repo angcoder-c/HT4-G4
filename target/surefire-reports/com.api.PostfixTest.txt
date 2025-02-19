@@ -1,0 +1,208 @@
+-------------------------------------------------------------------------------
+Test set: com.api.PostfixTest
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 5, Errors: 15, Skipped: 0, Time elapsed: 0.053 s <<< FAILURE! -- in com.api.PostfixTest
+com.api.PostfixTest.testInfixToPostfixComplexExpression -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.infixToPostfix(Postfix.java:26)
+	at com.api.PostfixTest.testInfixToPostfixComplexExpression(PostfixTest.java:163)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateDivision -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateDivision(PostfixTest.java:99)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateMultipleOperations -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateMultipleOperations(PostfixTest.java:127)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixEmptyExpression -- Time elapsed: 0.005 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Expression is empty> but was: <Tipo de stack no válido: ArrayList>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.api.PostfixTest.testInfixToPostfixEmptyExpression(PostfixTest.java:180)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateDivisionByZero -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.ArithmeticException> but was: <java.lang.IllegalArgumentException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at com.api.PostfixTest.testEvaluateDivisionByZero(PostfixTest.java:148)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.lambda$testEvaluateDivisionByZero$2(PostfixTest.java:149)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+com.api.PostfixTest.testEvaluateComplexExpression -- Time elapsed: 0 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateComplexExpression(PostfixTest.java:67)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateNegativeResult -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateNegativeResult(PostfixTest.java:120)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateSubtraction -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateSubtraction(PostfixTest.java:113)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixSimpleExpression -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.infixToPostfix(Postfix.java:26)
+	at com.api.PostfixTest.testInfixToPostfixSimpleExpression(PostfixTest.java:156)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixInvalidExpression -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Invalid infix expression> but was: <Tipo de stack no válido: ArrayList>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.api.PostfixTest.testInfixToPostfixInvalidExpression(PostfixTest.java:189)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixWithParentheses -- Time elapsed: 0 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.infixToPostfix(Postfix.java:26)
+	at com.api.PostfixTest.testInfixToPostfixWithParentheses(PostfixTest.java:195)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateWithNegativeNumbers -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateWithNegativeNumbers(PostfixTest.java:141)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateSimpleExpression -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateSimpleExpression(PostfixTest.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateInvalidExpression -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Invalid postfix expression> but was: <Tipo de stack no válido: ArrayList>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.api.PostfixTest.testEvaluateInvalidExpression(PostfixTest.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixSingleNumber -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.infixToPostfix(Postfix.java:26)
+	at com.api.PostfixTest.testInfixToPostfixSingleNumber(PostfixTest.java:170)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateWithZero -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateWithZero(PostfixTest.java:134)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateSingleNumber -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateSingleNumber(PostfixTest.java:74)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateMultiplication -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.eval(Postfix.java:79)
+	at com.api.PostfixTest.testEvaluateMultiplication(PostfixTest.java:106)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testEvaluateEmptyExpression -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Expression is empty> but was: <Tipo de stack no válido: ArrayList>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.api.PostfixTest.testEvaluateEmptyExpression(PostfixTest.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.api.PostfixTest.testInfixToPostfixWithDivision -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalArgumentException: Tipo de stack no válido: ArrayList
+	at com.api.stack.StackFactory.crearStack(StackFactory.java:17)
+	at com.api.Postfix.infixToPostfix(Postfix.java:26)
+	at com.api.PostfixTest.testInfixToPostfixWithDivision(PostfixTest.java:202)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

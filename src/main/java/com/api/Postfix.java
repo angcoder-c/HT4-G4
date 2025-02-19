@@ -18,38 +18,60 @@ public class Postfix {
      *
      * @param expression the infix expression to convert
      * @return the postfix expression as a string
+     * @throws IllegalArgumentException if the expression is invalid
      * based from https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/
      * 
      */
     public static String infixToPostfix(String expression) {
-        StringBuilder result = new StringBuilder();
-        Stack<Character> stack = new StackFactory<Character>().crearStack("ArrayList");
-        String operators = "+-*/%";
+        if (expression == null || expression.isEmpty()) {
+            throw new IllegalArgumentException("Expression cannot be null or empty");
+        }
 
-        for (char token : expression.toCharArray()) {
+        StringBuilder result = new StringBuilder();
+        Stack<Character> stack = new StackFactory<Character>().crearStack("vector");
+        String operators = "+-*/%";
+        int openParentheses = 0;
+
+        for (int i = 0; i < expression.length(); i++) {
+            char token = expression.charAt(i);
+
             if (Character.isDigit(token)) {
-                result.append(token);
+                while (i < expression.length() && Character.isDigit(expression.charAt(i))) {
+                    result.append(expression.charAt(i++));
+                }
+                result.append(" ");
+                i--; // to counter the extra increment from the inner while loop
             } else if (token == '(') {
                 stack.push(token);
+                openParentheses++;
             } else if (token == ')') {
+                if (openParentheses == 0) {
+                    throw new IllegalArgumentException("Mismatched parentheses in expression");
+                }
                 while (!stack.empty() && stack.peek() != '(') {
-                    result.append(stack.pop());
+                    result.append(stack.pop()).append(" ");
                 }
                 stack.pop();
+                openParentheses--;
             } else if (operators.indexOf(token) != -1) {
                 while (!stack.empty() && precedence(stack.peek()) >= precedence(token)) {
-                    result.append(stack.pop());
+                    result.append(stack.pop()).append(" ");
                 }
                 stack.push(token);
+            } else if (!Character.isWhitespace(token)) {
+                throw new IllegalArgumentException("Invalid character in expression: " + token);
             }
         }
 
         while (!stack.empty()) {
-            result.append(stack.pop());
-            result.append(" ");
+            char top = stack.pop();
+            if (top == '(') {
+                throw new IllegalArgumentException("Mismatched parentheses in expression");
+            }
+            result.append(top).append(" ");
         }
 
-        return result.toString();
+        return result.toString().trim();
     }
 
     private static int precedence(char operator) {

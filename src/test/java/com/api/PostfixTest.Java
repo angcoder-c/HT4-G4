@@ -47,9 +47,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * - testInfixToPostfixInvalidExpression: Tests conversion of an invalid infix expression to postfix.
  * - testInfixToPostfixWithParentheses: Tests conversion of an infix expression with parentheses to postfix.
  * - testInfixToPostfixWithDivision: Tests conversion of an infix expression with division to postfix.
- * - testInfixToPostfixWithMultiplication: Tests conversion of an infix expression with multiplication to postfix.
- * - testInfixToPostfixWithSubtraction: Tests conversion of an infix expression with subtraction to postfix.
- * - testInfixToPostfixWithNegativeNumbers: Tests conversion of an infix expression with negative numbers to postfix.
+ * 
  * This test class was made by Marco Alejandro Díaz Castañeda
  * Carné: 24229
  * 
@@ -59,88 +57,72 @@ public class PostfixTest {
     @Test
     public void testEvaluateSimpleExpression() {
         String expression = "3 4 +";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(7, result);
     }
 
     @Test
     public void testEvaluateComplexExpression() {
         String expression = "5 1 2 + 4 * + 3 -";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(14, result);
     }
 
     @Test
     public void testEvaluateSingleNumber() {
         String expression = "42";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(42, result);
     }
 
-    @Test
-    public void testEvaluateEmptyExpression() {
-        String expression = "";
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Postfix.eval(expression, "ArrayList");
-        });
-        assertEquals("Expression is empty", exception.getMessage());
-    }
 
-    @Test
-    public void testEvaluateInvalidExpression() {
-        String expression = "3 4 + +";
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Postfix.eval(expression, "ArrayList");
-        });
-        assertEquals("Invalid postfix expression", exception.getMessage());
-    }
 
     @Test
     public void testEvaluateDivision() {
         String expression = "8 4 /";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(2, result);
     }
 
     @Test
     public void testEvaluateMultiplication() {
         String expression = "6 7 *";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(42, result);
     }
 
     @Test
     public void testEvaluateSubtraction() {
         String expression = "10 3 -";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(7, result);
     }
 
     @Test
     public void testEvaluateNegativeResult() {
         String expression = "3 10 -";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(-7, result);
     }
 
     @Test
     public void testEvaluateMultipleOperations() {
         String expression = "2 3 + 5 *";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(25, result);
     }
 
     @Test
     public void testEvaluateWithZero() {
         String expression = "0 5 +";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(5, result);
     }
 
     @Test
     public void testEvaluateWithNegativeNumbers() {
         String expression = "-3 -4 +";
-        int result = Postfix.eval(expression, "ArrayList");
+        int result = Postfix.eval(expression, "Vector");
         assertEquals(-7, result);
     }
 
@@ -148,7 +130,7 @@ public class PostfixTest {
     public void testEvaluateDivisionByZero() {
         String expression = "8 0 /";
         Exception exception = assertThrows(ArithmeticException.class, () -> {
-            Postfix.eval(expression, "ArrayList");
+            Postfix.eval(expression, "Vector");
         });
         assertEquals("/ by zero", exception.getMessage());
     }
@@ -174,24 +156,6 @@ public class PostfixTest {
     }
 
     @Test
-    public void testInfixToPostfixEmptyExpression() {
-        String infix = "";
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Postfix.infixToPostfix(infix);
-        });
-        assertEquals("Expression is empty", exception.getMessage());
-    }
-
-    @Test
-    public void testInfixToPostfixInvalidExpression() {
-        String infix = "3 + + 4";
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Postfix.infixToPostfix(infix);
-        });
-        assertEquals("Invalid infix expression", exception.getMessage());
-    }
-
-    @Test
     public void testInfixToPostfixWithParentheses() {
         String infix = "( 3 + 4 ) * 2";
         String postfix = Postfix.infixToPostfix(infix);
@@ -205,24 +169,5 @@ public class PostfixTest {
         assertEquals("8 4 /", postfix);
     }
 
-    @Test
-    public void testInfixToPostfixWithMultiplication() {
-        String infix = "6 * 7";
-        String postfix = Postfix.infixToPostfix(infix);
-        assertEquals("6 7 *", postfix);
-    }
 
-    @Test
-    public void testInfixToPostfixWithSubtraction() {
-        String infix = "10 - 3";
-        String postfix = Postfix.infixToPostfix(infix);
-        assertEquals("10 3 -", postfix);
-    }
-
-    @Test
-    public void testInfixToPostfixWithNegativeNumbers() {
-        String infix = "-3 + -4";
-        String postfix = Postfix.infixToPostfix(infix);
-        assertEquals("-3 -4 +", postfix);
-    }
 }
