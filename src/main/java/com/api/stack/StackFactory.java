@@ -10,10 +10,10 @@ public class StackFactory<E> {
      * @throws IllegalArgumentException Si el tipo no es válido.
      */
     public Stack<E> crearStack(String tipo) {
-        return switch (tipo.toLowerCase()) {
-            case "vector" -> new StackVector<>();
-            case "arrayList" -> new StackArrayList<>();
-            case "list" -> new StackList<>();
+        return switch (tipo) { 
+            case "Vector" -> new StackVector<>();
+            case "ArrayList" -> new StackArrayList<>();
+            case "List" -> new StackList<>();
             default -> throw new IllegalArgumentException("Tipo de stack no válido: " + tipo);
         };
     }

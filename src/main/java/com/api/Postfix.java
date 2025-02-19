@@ -28,7 +28,7 @@ public class Postfix {
         }
 
         StringBuilder result = new StringBuilder();
-        Stack<Character> stack = new StackFactory<Character>().crearStack("vector");
+        Stack<Character> stack = new StackFactory<Character>().crearStack("Vector");
         String operators = "+-*/%";
         int openParentheses = 0;
 
