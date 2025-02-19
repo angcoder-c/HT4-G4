@@ -20,7 +20,8 @@ public class App {
             System.out.println("Seleccione el tipo de Stack a utilizar:");
             System.out.println("1. Vector");
             System.out.println("2. ArrayList");
-            System.out.println("3. List");
+            System.out.println("3. ListSimple");
+            System.out.println("4. ListDouble");
             System.out.print("Ingrese el número de su elección: ");
             String opcion = scanner.nextLine();
 
@@ -32,9 +33,12 @@ public class App {
                 tipo = "ArrayList";
                 break;
             } else if (opcion.equals("3")) {
-                tipo = "List";
+                tipo = "ListSimple";
                 break;
-            } else {
+            } else if (opcion.equals("4")) {
+                tipo = "ListDouble";
+                break;
+            }else {
                 System.out.println("Opción inválida, intente de nuevo.");
             }
         }

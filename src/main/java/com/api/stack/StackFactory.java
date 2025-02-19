@@ -13,7 +13,8 @@ public class StackFactory<E> {
         return switch (tipo) { 
             case "Vector" -> new StackVector<>();
             case "ArrayList" -> new StackArrayList<>();
-            case "List" -> new StackList<>();
+            case "ListSimple" -> new StackList<>("ListSimple");
+            case "ListDouble" -> new StackList<>("ListDouble");
             default -> throw new IllegalArgumentException("Tipo de stack no válido: " + tipo);
         };
     }

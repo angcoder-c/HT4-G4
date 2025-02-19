@@ -41,7 +41,7 @@ mvn -Dtest=AppTest test
 
 Revise que ventajas / desventajas hay al utilizar el patrón Singlenton en general, ya que su comportamiento es muy
 similar a una variable global. ¿Cree que su uso es adecuado en este programa? Conteste en un documento PDF
-   - R: Es adecuado en ciertas medida medida nada más, por ejemplo para comprobar que la clase postfix no instancie más de una vez al Stack, asegurando un mejor control de memoria e instancias. 
+   - R: Es adecuado en ciertas medida nada más, por ejemplo para comprobar que la clase postfix no instancie más de una vez al Stack, asegurando un mejor control de memoria e instancias. 
      Pero en otros casos solo retrasaría las pruebas unitarias por ejemplo por lo que hay que usarlo nada más cuando sea estrictamente necesario.
 
 

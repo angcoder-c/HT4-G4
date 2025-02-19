@@ -1,10 +1,18 @@
 package com.api.stack;
+import com.api.list.List;
+import com.api.list.ListFactory;
 
 public class StackList <E> implements Stack<E> {
-    private java.util.LinkedList<E> list;
+    private List<E> list;
 
-    public StackList() {
-        list = new java.util.LinkedList<>();
+    public StackList(String tipo) {
+        if (tipo.equals("ListSimple")) {
+            list = ListFactory.createSimpleLinkedList();
+        } else if (tipo.equals("ListDouble")) {
+            list = ListFactory.createDoubleLinkedList();
+        } else {
+            list = ListFactory.createSimpleLinkedList();
+        }
     }
 
     @Override
