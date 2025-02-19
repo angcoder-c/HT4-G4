@@ -46,6 +46,7 @@ public class Postfix {
 
         while (!stack.empty()) {
             result.append(stack.pop());
+            result.append(" ");
         }
 
         return result.toString();
@@ -78,9 +79,7 @@ public class Postfix {
         Stack<Integer> pila = new StackFactory<Integer>().crearStack(tipo);
 
         for (String token : expression.split(" ")) {
-            if (token.matches("-?\\d+"))
-            // -?\\d+ is used for determine if the token is a valid interger
-            {
+            if (token.matches("-?\\d+")) {
                 pila.push(Integer.parseInt(token));
             } else {
                 int b = pila.pop();
@@ -108,5 +107,4 @@ public class Postfix {
         }
         return pila.pop();
     }
-
 }
