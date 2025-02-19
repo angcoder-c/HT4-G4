@@ -1,9 +1,59 @@
+
 package com.api;
+
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-
+/**
+ * Unit tests for the Postfix class.
+ * 
+ * This class contains test methods to evaluate the functionality of the Postfix class,
+ * which includes methods for evaluating postfix expressions and converting infix expressions
+ * to postfix expressions.
+ * 
+ * The tests cover a variety of scenarios including:
+ * - Simple and complex expressions
+ * - Single number expressions
+ * - Empty expressions
+ * - Invalid expressions
+ * - Division, multiplication, subtraction, and addition operations
+ * - Expressions with negative numbers
+ * - Division by zero
+ * - Expressions with parentheses
+ * 
+ * Each test method uses JUnit 5 annotations and assertions to verify the correctness of the
+ * Postfix class methods.
+ * 
+ * Methods:
+ * - testEvaluateSimpleExpression: Tests evaluation of a simple postfix expression.
+ * - testEvaluateComplexExpression: Tests evaluation of a complex postfix expression.
+ * - testEvaluateSingleNumber: Tests evaluation of a single number postfix expression.
+ * - testEvaluateEmptyExpression: Tests evaluation of an empty postfix expression.
+ * - testEvaluateInvalidExpression: Tests evaluation of an invalid postfix expression.
+ * - testEvaluateDivision: Tests evaluation of a division operation in postfix expression.
+ * - testEvaluateMultiplication: Tests evaluation of a multiplication operation in postfix expression.
+ * - testEvaluateSubtraction: Tests evaluation of a subtraction operation in postfix expression.
+ * - testEvaluateNegativeResult: Tests evaluation of a postfix expression resulting in a negative number.
+ * - testEvaluateMultipleOperations: Tests evaluation of a postfix expression with multiple operations.
+ * - testEvaluateWithZero: Tests evaluation of a postfix expression with zero.
+ * - testEvaluateWithNegativeNumbers: Tests evaluation of a postfix expression with negative numbers.
+ * - testEvaluateDivisionByZero: Tests evaluation of a postfix expression with division by zero.
+ * - testInfixToPostfixSimpleExpression: Tests conversion of a simple infix expression to postfix.
+ * - testInfixToPostfixComplexExpression: Tests conversion of a complex infix expression to postfix.
+ * - testInfixToPostfixSingleNumber: Tests conversion of a single number infix expression to postfix.
+ * - testInfixToPostfixEmptyExpression: Tests conversion of an empty infix expression to postfix.
+ * - testInfixToPostfixInvalidExpression: Tests conversion of an invalid infix expression to postfix.
+ * - testInfixToPostfixWithParentheses: Tests conversion of an infix expression with parentheses to postfix.
+ * - testInfixToPostfixWithDivision: Tests conversion of an infix expression with division to postfix.
+ * - testInfixToPostfixWithMultiplication: Tests conversion of an infix expression with multiplication to postfix.
+ * - testInfixToPostfixWithSubtraction: Tests conversion of an infix expression with subtraction to postfix.
+ * - testInfixToPostfixWithNegativeNumbers: Tests conversion of an infix expression with negative numbers to postfix.
+ * This test class was made by Marco Alejandro Díaz Castañeda
+ * Carné: 24229
+ * 
+ */
 public class PostfixTest {
 
     @Test
@@ -101,5 +151,78 @@ public class PostfixTest {
             Postfix.eval(expression, "ArrayList");
         });
         assertEquals("/ by zero", exception.getMessage());
+    }
+    @Test
+    public void testInfixToPostfixSimpleExpression() {
+        String infix = "3 + 4";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("3 4 +", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixComplexExpression() {
+        String infix = "5 + ((1 + 2) * 4) - 3";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("5 1 2 + 4 * + 3 -", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixSingleNumber() {
+        String infix = "42";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("42", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixEmptyExpression() {
+        String infix = "";
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Postfix.infixToPostfix(infix);
+        });
+        assertEquals("Expression is empty", exception.getMessage());
+    }
+
+    @Test
+    public void testInfixToPostfixInvalidExpression() {
+        String infix = "3 + + 4";
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Postfix.infixToPostfix(infix);
+        });
+        assertEquals("Invalid infix expression", exception.getMessage());
+    }
+
+    @Test
+    public void testInfixToPostfixWithParentheses() {
+        String infix = "( 3 + 4 ) * 2";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("3 4 + 2 *", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixWithDivision() {
+        String infix = "8 / 4";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("8 4 /", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixWithMultiplication() {
+        String infix = "6 * 7";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("6 7 *", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixWithSubtraction() {
+        String infix = "10 - 3";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("10 3 -", postfix);
+    }
+
+    @Test
+    public void testInfixToPostfixWithNegativeNumbers() {
+        String infix = "-3 + -4";
+        String postfix = Postfix.infixToPostfix(infix);
+        assertEquals("-3 -4 +", postfix);
     }
 }
