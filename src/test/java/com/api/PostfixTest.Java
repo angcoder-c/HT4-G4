@@ -16,8 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * The tests cover a variety of scenarios including:
  * - Simple and complex expressions
  * - Single number expressions
- * - Empty expressions
- * - Invalid expressions
  * - Division, multiplication, subtraction, and addition operations
  * - Expressions with negative numbers
  * - Division by zero
@@ -30,8 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * - testEvaluateSimpleExpression: Tests evaluation of a simple postfix expression.
  * - testEvaluateComplexExpression: Tests evaluation of a complex postfix expression.
  * - testEvaluateSingleNumber: Tests evaluation of a single number postfix expression.
- * - testEvaluateEmptyExpression: Tests evaluation of an empty postfix expression.
- * - testEvaluateInvalidExpression: Tests evaluation of an invalid postfix expression.
  * - testEvaluateDivision: Tests evaluation of a division operation in postfix expression.
  * - testEvaluateMultiplication: Tests evaluation of a multiplication operation in postfix expression.
  * - testEvaluateSubtraction: Tests evaluation of a subtraction operation in postfix expression.
@@ -43,8 +39,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * - testInfixToPostfixSimpleExpression: Tests conversion of a simple infix expression to postfix.
  * - testInfixToPostfixComplexExpression: Tests conversion of a complex infix expression to postfix.
  * - testInfixToPostfixSingleNumber: Tests conversion of a single number infix expression to postfix.
- * - testInfixToPostfixEmptyExpression: Tests conversion of an empty infix expression to postfix.
- * - testInfixToPostfixInvalidExpression: Tests conversion of an invalid infix expression to postfix.
  * - testInfixToPostfixWithParentheses: Tests conversion of an infix expression with parentheses to postfix.
  * - testInfixToPostfixWithDivision: Tests conversion of an infix expression with division to postfix.
  * 

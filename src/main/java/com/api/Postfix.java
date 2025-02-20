@@ -12,7 +12,7 @@ import com.api.stack.StackFactory;
  */
 
 public class Postfix {
-
+    private static Postfix instance; 
     /**
      * Converts an infix expression to a postfix expression.
      *
@@ -22,6 +22,9 @@ public class Postfix {
      * based from https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/
      * 
      */
+    
+    private Postfix() {}
+
     public static String infixToPostfix(String expression) {
         if (expression == null || expression.isEmpty()) {
             throw new IllegalArgumentException("Expression cannot be null or empty");
@@ -128,5 +131,11 @@ public class Postfix {
             }
         }
         return pila.pop();
+    }
+    public static Postfix getIntance(){
+        if (instance == null){
+            instance = new Postfix();
+        }
+        return instance;
     }
 }
